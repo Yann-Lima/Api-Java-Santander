@@ -2,6 +2,7 @@ package me.dio.service.impl;
 
 import java.util.NoSuchElementException;
 
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Service;
 
 import domain.repository.UserRepository;
@@ -9,6 +10,7 @@ import me.dio.domain.model.User;
 import me.dio.service.UserService;
 
 @Service
+@EnableJpaRepositories(basePackages = "domain.repository.UserRepository")
 public class UserServiceImpl implements UserService {
 	
 	private final UserRepository userRepository;
